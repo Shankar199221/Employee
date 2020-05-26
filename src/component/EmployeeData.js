@@ -5,7 +5,7 @@ import Table from 'react-bootstrap/Table'
 
 function EmployeeData() {
     
-    const [data,setData]= useState()
+    
 
     const empData =useSelector(state => state.empData)
     const dispatch = useDispatch()
@@ -14,9 +14,9 @@ function EmployeeData() {
 
      useEffect(()=>{
          getData()
-         setData(empData.employeeData)
+       
      },[])
-    console.log(data)
+    console.log(empData.employeeData)
    
 
     return (
@@ -35,9 +35,9 @@ function EmployeeData() {
                 </tr>
             </thead>
             <tbody>
-               {data&&  data.map((item)=>{
-       return  <tr key={item.id}>
-                    <td>1</td>
+               {empData.employeeData &&  empData.employeeData.map((item)=>{
+                 return  <tr key={item.id}>
+                    <td>{item.id}</td>
                     <td>{item.name}</td>
                     <td>{item.age}</td>
                     <td>{item.gender}</td>

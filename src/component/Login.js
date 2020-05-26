@@ -1,12 +1,14 @@
 import React,{useEffect,useState} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import fetchLoginData from '../action/fetchLoginData'
+import {useForm} from 'react-hook-form';
 
 function Login() {
-    
+   
    const [email,setEmail]= useState('')
    const [password,setPassword]= useState('')
-//    const [emp,setEmp]= useState()
+   const { register,errors } = useForm();
+
 
     const loginData =useSelector(state => state.loginData)
     const dispatch = useDispatch()
@@ -26,7 +28,8 @@ function Login() {
     
        if(email === loginData.loginData.username && password ===  loginData.loginData.password ){
            console.log('Valid User data')
-           window.location.href = "/employeedata"
+        window.location.href = "/employeedata"
+      
            
        }else console.log('please enter volid data')
 
@@ -34,15 +37,17 @@ function Login() {
    }
     return (
         <div >
-           <form onSubmit={handleSubmit} className="ml-5 border  p-3">
+           <form onSubmit={handleSubmit} className="ml-3  p-3">
             <div className="form-group">
+                <h1>Login Form</h1>
                 <label >Email :</label>
-                <input type="email" value={email} className="form-control" onChange={(e)=>setEmail(e.target.value)}  aria-describedby="emailHelp" />
-              
+                <input type="email" value={email} name="email" className="form-control" onChange={(e)=>setEmail(e.target.value)}  aria-describedby="emailHelp"   ref={register({ required: true })}  />
+                {errors.email && <span>This field is required</span>}
             </div>
             <div className="form-group">
                 <label >Password</label>
-                <input type="password" value={password} className="form-control" onChange={(e)=>setPassword(e.target.value)} />
+                <input type="password" value={password} name="password" className="form-control" onChange={(e)=>setPassword(e.target.value)}   ref={register({ required: true })}  />
+                {errors.password && <span>This field is required</span>}
             </div>
             
             <button type="submit" className="btn btn-primary">Submit</button>
