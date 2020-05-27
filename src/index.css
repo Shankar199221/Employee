@@ -17,3 +17,6 @@ code {
 .app{
   background-color: azure;
 }
+.borderimg{
+  border-radius: 5px;
+}

@@ -1,11 +1,12 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import logo from '../images/logo.png'
 
 function Navbar() {
     return (
         <div className="container-fluid p-0">
            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-           <Link class="nav-link" to='/'>Home </Link>
+           <Link class="nav-link" to='/'><img src={logo} width="70rem" height="60rem" className="borderimg"/> </Link>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

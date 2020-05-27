@@ -18,19 +18,16 @@ function App() {
                
             </div>
             <div className="row"> 
-              <div className="col-2"></div>
-              <div className="col-8">
+            
+              
                     <Switch>
                       <Route path="/" exact component={Login} />
                       <Route path="/employeedata" component={EmployeeData} />
                     </Switch>
               </div>
-              <div className="col-2"></div>
               
-              
-            </div>
          
-          </div>
+        </div>  
          
         </>
     </Router>
