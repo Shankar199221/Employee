@@ -6,6 +6,7 @@ import Login from './component/Login';
 import EmployeeData from './component/EmployeeData';
 
 
+
 function App() {
   return (
     <Router>
@@ -13,6 +14,7 @@ function App() {
         <div className="container ">
             <div className="row">
                 <Navbar />
+                
                
             </div>
             <div className="row"> 
