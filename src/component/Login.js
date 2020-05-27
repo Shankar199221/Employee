@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import fetchLoginData from '../action/fetchLoginData'
-import { useForm } from "react-hook-form";
+
 
 
 function Login() {
@@ -10,7 +10,7 @@ function Login() {
    const [password,setPassword]= useState('')
    const [emailerror,setEmailerror]= useState(false)
    const [passworderror,setPassworderror]= useState(false)
-   const { register, watch, errors } = useForm();
+   
 
 
     const loginData =useSelector(state => state.loginData)
