@@ -22,13 +22,13 @@ function Login() {
          getData()
          
      },[])
-    console.log(loginData.loginData)
+  
    
 
    const handleSubmit =(e)=>{
        e.preventDefault();
        if(email === loginData.loginData.username && password ===  loginData.loginData.password ){
-           console.log('Valid User data')
+           
         window.location.href = "/employeedata"
        }else console.log('please enter volid data')
 
@@ -43,8 +43,8 @@ function Login() {
   
    }
     return (
-        <div >
-           <form onSubmit={handleSubmit} className="ml-3  p-3">
+        <div className="row">
+           <form onSubmit={handleSubmit} className="form  p-3 ">
             <div className="form-group">
                 <h1>Login Form</h1>
                 <label >Email :</label>
